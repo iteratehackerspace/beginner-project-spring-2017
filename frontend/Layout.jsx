@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 import Header from './Header'
 import Piano from './Piano'
 import Tune from './Tune'
+import MusicBox from './MusicBox'
 
 export default class Layout extends Component{
   constructor(){
@@ -18,6 +19,7 @@ export default class Layout extends Component{
         <Header />
         <Tune />
         <Piano />
+        <MusicBox />
       </div>
     );
   }
