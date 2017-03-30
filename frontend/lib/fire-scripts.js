@@ -21,9 +21,8 @@ PianoRock.prototype.pushNote = function(e) {
   // Check that the user entered a message and is signed in.
   if (currentUser != null) {
     // Add a new tone entry to the Firebase Database.
-    this.notesRef.push({
-      name: 'anonymous',
-      note: e.key
+    this.database.ref('users/' + currentUser.uid).update({
+      lastNote: e.key
     }).catch(function(error) {
       console.error('Error writing new message to Firebase Database', error);
     });
@@ -32,21 +31,21 @@ PianoRock.prototype.pushNote = function(e) {
 
 PianoRock.prototype.loadNotes = function() {
   // Reference to the /messages/ database path.
-  this.notesRef = this.database.ref('notes');
+  this.notesRef = this.database.ref('users');
   // Make sure we remove all previous listeners.
   this.notesRef.off();
 
   // Loads the last 12 messages and listen for new ones.
   let getNotes = function(data) {
     let val = data.val();
-    this.playNote(data.key, val.name, val.note);
+    this.playNote(val.lastNote);
   }.bind(this);
   this.notesRef.limitToLast(1).on('child_added', getNotes);
   this.notesRef.limitToLast(1).on('child_changed', getNotes);
 };
 
 PianoRock.prototype.playNote =
-                         function(key, name, note) {
+                         function(note) {
   switch(note) {
     case '2': tones.play('c#',5);break;
     case '3': tones.play('d#',5);break;

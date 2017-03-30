@@ -34,7 +34,7 @@ export default class Header extends Component{
     };
     return(
       //TODO real button element should go instead of styled div
-      //TODO log-in and log-out on same button 
+      //TODO log-in and log-out on same button
       <div>
         <div style = {headerStyle}>Hello!
           <div style = {buttonStyle} id="log-in" >Login</div>

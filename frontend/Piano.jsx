@@ -25,7 +25,7 @@ class BlackKey extends React.Component {
      switch (e.key) {
        case "2": tones.play('c#',5);pianoRock.pushNote(e);break;
        case "3": tones.play('d#',5);pianoRock.pushNote(e);break;
-       case "5":tones.play('f#',5);pianoRock.pushNote(e);break;
+       case "5": tones.play('f#',5);pianoRock.pushNote(e);break;
        case "6": tones.play('g#',5);pianoRock.pushNote(e);break;
        case "7": tones.play('a#',5);pianoRock.pushNote(e);break;
 
@@ -104,6 +104,7 @@ class WhiteKey extends React.Component {
   }
 
   render(){
+
     const div_style = {
       width:'45px',
       height:'100%',

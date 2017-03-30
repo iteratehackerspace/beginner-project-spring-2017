@@ -3,8 +3,7 @@ import { render } from 'react-dom';
 import {Draggable, Droppable } from 'react-drag-and-drop'
 import Layout from './Layout';
 
-export default
-class MusicBox extends React.Component{
+export default class MusicBox extends React.Component{
   constructor(){
     super();
     this.state={
