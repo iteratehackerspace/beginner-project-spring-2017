@@ -78,7 +78,7 @@ class WhiteKey extends React.Component {
       switch (e.key) {
         case "q": tones.play('c',5);pianoRock.pushNote(e);break;
         case "w": tones.play('d',5);pianoRock.pushNote(e);break;
-        case "e":tones.play('e',5);pianoRock.pushNote(e);break;
+        case "e": tones.play('e',5);pianoRock.pushNote(e);break;
         case "r": tones.play('f',5);pianoRock.pushNote(e);break;
         case "t": tones.play('g',5);pianoRock.pushNote(e);break;
         case "y": tones.play('a',5);pianoRock.pushNote(e);break;
